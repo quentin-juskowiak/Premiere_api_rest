@@ -29,6 +29,10 @@ const produits = [
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.json({ message: "Bienvenue sur mon API REST de produits !" });
+});
+
 app.get("/produits", (req, res) => {
     res.json(produits);
 });
