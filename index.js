@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/produits", (req, res) => {
-    res.json(produits);
+    res.status(200).json(produit);
 });
 
 app.get("/produits/:id", (req, res) => {
@@ -45,7 +45,7 @@ app.get("/produits/:id", (req, res) => {
         return res.status(404).json({ message: "Produit introuvable" });
     }
 
-    res.json(produit);
+    res.status(200).json(produit);
 });
 
 //ajout d'un nouveau produit
@@ -67,7 +67,7 @@ app.patch("/produits/:id", (req, res) => {
     }
 
     Object.assign(produit, req.body);
-    res.json(produit);
+    res.status(201).json(produit);
 });
 
 //remplacer
